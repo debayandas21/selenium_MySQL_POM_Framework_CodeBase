@@ -88,14 +88,14 @@ public class SignUp_page extends BaseClass{
 			actions.sendText(CityFld, testData.get("City"));
 			actions.sendText(stateFld, testData.get("State"));
 			actions.sendText(postalCodeFld, testData.get("P-code"));
-			actions.sendText(UserNameFld, testData.get("UserName"));
+			actions.sendText(UserNameFld, testData.get("login_userName"));
 
 			/* Select drop down value from the list */
 			Select objSelect = new Select(countryFld);
 			objSelect.selectByVisibleText(testData.get("Country"));
 
-			actions.sendText(passwordFld, this.decodeEncryptedData(testData.get("Password")));
-			actions.sendText(confirmPasswordFld, this.decodeEncryptedData(testData.get("Password")));
+			actions.sendText(passwordFld, testData.get("loginPass"));
+			actions.sendText(confirmPasswordFld, testData.get("loginPass"));
 			actions.Wait(03);
 
 			ExecutionReport.loggMessage(report, "Sign-Up data form fill", "Sign-UP User data entered successfully",

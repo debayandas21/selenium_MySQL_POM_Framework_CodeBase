@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.Hashtable;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentTest;
 
@@ -25,11 +24,11 @@ public class Jdbc_databse_connectivity extends BaseClass {
 	 * @throws Exception, SQLException
 	 */
 
-	@BeforeTest
-	public void create_jdBC_connection(String databseName, ExtentTest report) throws Exception, SQLException {
+
+	public void create_jdBC_connection(ExtentTest report) throws Exception, SQLException {
 		try {
 
-			String db_connectionPath = globalConfig.globalParameter.get("Databse_connection_path") + databseName;
+			String db_connectionPath = globalConfig.globalParameter.get("Databse_connection_path") + "profile_database";
 			String userName = globalConfig.globalParameter.get("DB_UserName");
 			String password = decodeEncryptedData(globalConfig.globalParameter.get("DB_Password"));
 

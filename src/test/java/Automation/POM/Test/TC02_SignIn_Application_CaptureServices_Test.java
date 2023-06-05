@@ -32,7 +32,7 @@ public class TC02_SignIn_Application_CaptureServices_Test extends BaseClass {
 	@BeforeTest
 	public void setUpConfig() throws Exception {
 		initializeConfig();
-		jdbc.create_jdBC_connection("profile_database", report);
+		jdbc.create_jdBC_connection(report);
 	}
 	
 	
